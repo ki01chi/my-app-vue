@@ -52,6 +52,7 @@ export default {
 .v-toolbar__title {
   overflow: visible;
   margin-right: 50px;
+  font-size: 2.5rem;
 }
 .v-app-bar__nav-icon {
   @include display_pc {
@@ -63,6 +64,9 @@ export default {
  
   @include display_pc {
     display: block;
+  }
+  .v-tab {
+    font-size: 1.2rem;
   }
 }
 
