@@ -8,7 +8,7 @@
 import Header from './components/Header'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Header
   }

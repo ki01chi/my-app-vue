@@ -1,5 +1,6 @@
 <template>
-  <v-app>
+  <header>
+
     <v-app-bar app dark color="#8bc34a">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title>Haiiku</v-toolbar-title>
@@ -30,19 +31,20 @@
         </v-list>
       </v-navigation-drawer>
 
-  </v-app>
+  </header>
 </template>
 
 <script>
 import constants from "../common/constants";
 
 export default {
+  name: 'Header',
   data() {
     return {
       drawer: false,
       menuItems: constants.menuItems,
-    };
-  },
+    }
+  }
 };
 </script>
 
@@ -51,5 +53,18 @@ export default {
   overflow: visible;
   margin-right: 50px;
 }
+.v-app-bar__nav-icon {
+  @include display_pc {
+    display: none;
+  }
+}
+.v-tabs {
+  display: none;
+ 
+  @include display_pc {
+    display: block;
+  }
+}
+
 </style>
 
