@@ -1,6 +1,11 @@
 <template>
   <v-app id="app">
     <Header />
+    <router-link to="/home" class="link">HOME</router-link>
+    <router-link to="/about" class="link">ABOUT</router-link>
+    <router-link to="/login" class="link">LOGIN</router-link>
+    <router-link to="/register" class="link">REGISTER</router-link>
+    <router-view></router-view>
     <Footer />
   </v-app>
 </template>
@@ -25,4 +30,7 @@ export default {
       font-family: 'Sawarabi Mincho', sans-serif;
     }
 
+.link {
+  margin-top: 80px;
+}
 </style>

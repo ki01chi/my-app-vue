@@ -1,7 +1,7 @@
 <template>
-  <v-spp>
-    
-  </v-spp>
+  <div class="container">
+    <h2>トップページ</h2>
+  </div>
 </template>
 
 <script>

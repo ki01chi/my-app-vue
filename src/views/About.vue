@@ -1,5 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="container">
+    <h2>詳細ページ</h2>
+    <p>ログインが必要です</p>
   </div>
 </template>
