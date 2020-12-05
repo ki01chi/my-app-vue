@@ -1,36 +1,31 @@
 <template>
   <header>
-
-    <v-app-bar app dark color="#8bc34a">
+    <v-app-bar app dark color="green">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title>Haiiku</v-toolbar-title>
 
       <!-- pc表示タブメニュー -->
       <v-tabs>
-        <v-tab
-          v-for="(menuItem, index) in menuItems" 
-          :key="index"
-        >
+        <v-tab v-for="(menuItem, index) in menuItems" :key="index">
           {{ menuItem.name }}
         </v-tab>
       </v-tabs>
     </v-app-bar>
 
-      <!-- sp表示タブメニュー -->
-      <v-navigation-drawer v-model="drawer" fixed temporary>
-        <v-list nav dense>
-          <v-list-item-group>
-            <v-list-item
-              class="my-10"
-              v-for="(menuItem, index) in menuItems"
-              :key="index"
-            >
-              <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
-
+    <!-- sp表示タブメニュー -->
+    <v-navigation-drawer v-model="drawer" fixed temporary>
+      <v-list nav dense>
+        <v-list-item-group>
+          <v-list-item
+            class="my-10"
+            v-for="(menuItem, index) in menuItems"
+            :key="index"
+          >
+            <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
   </header>
 </template>
 
@@ -38,13 +33,13 @@
 import constants from "../common/constants";
 
 export default {
-  name: 'Header',
+  name: "Header",
   data() {
     return {
       drawer: false,
       menuItems: constants.menuItems,
-    }
-  }
+    };
+  },
 };
 </script>
 
@@ -61,7 +56,7 @@ export default {
 }
 .v-tabs {
   display: none;
- 
+
   @include display_pc {
     display: block;
   }
@@ -69,6 +64,5 @@ export default {
     font-size: 1.2rem;
   }
 }
-
 </style>
 

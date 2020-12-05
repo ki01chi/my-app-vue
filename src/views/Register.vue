@@ -1,40 +1,62 @@
 <template>
-  <div class="container">
-    <h2>新規登録</h2>
-    <form class="login-form">
-      <div class="input-group">
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" v-model="email" />
-      </div>
-      <div class="input-group">
-        <label for="password">パスワード</label>
-        <input type="password" id="password" v-model="password" />
-      </div>
-      <div class="input-group">
-        <button type="button" @click="register()">新規登録</button>
-      </div>
-    </form>
-  </div>
+  <v-card width="500px" class="mx-auto mt-5">
+    <v-card-title>
+      <h1 class="display-1 mx-auto">新規登録</h1>
+    </v-card-title>
+    <v-card-text>
+      <v-form>
+        <v-text-field
+          type="email"
+          v-model="email"
+          prepend-icon="mdi-account"
+          size="large"
+          label="メールアドレス"
+        ></v-text-field>
+        <v-text-field
+          v-model="password"
+          v-bind:type="show ? 'text' : 'password'"
+          @click:append="show = !show"
+          prepend-icon="mdi-lock"
+          v-bind:append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+          label="パスワード"
+        ></v-text-field>
+        <v-text-field
+          type="text"
+          prepend-icon="mdi-emoticon-happy-outline"
+          label="ニックネーム"
+        ></v-text-field>
+        <v-btn 
+          @click="register()"
+          color="green" 
+          dark large retain-focus-on-click
+        >登録</v-btn>
+      </v-form>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
 import firebase from "firebase";
 
 export default {
-  data() {
+  name: "register",
+  data: function () {
     return {
       email: "",
       password: "",
+      show: false,
     };
   },
+
   methods: {
-    register() {
+    register: function () {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          alert("新規登録完了")
-        )
+        .then((user) => {
+          alert(`${user.email} 新規登録完了しました`),
+          this.$router.push("/")
+        })
         .catch((error) => {
           alert(error.message);
         });
