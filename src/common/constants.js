@@ -2,11 +2,11 @@ export default {
   menuItems: [
     {
       name: 'みんなの投稿',
-      url: '#'
+      url: '/'
     },
     {
       name: 'マイページ',
-      url: '#'
+      url: '/register'
     },
   ]
 }

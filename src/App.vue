@@ -1,11 +1,9 @@
 <template>
   <v-app id="app">
     <Header />
-    <router-link to="/home" class="link">HOME</router-link>
-    <router-link to="/about" class="link">ABOUT</router-link>
-    <router-link to="/login" class="link">LOGIN</router-link>
-    <router-link to="/register" class="link">REGISTER</router-link>
-    <router-view></router-view>
+    <v-content>
+      <router-view/>
+    </v-content>
     <Footer />
   </v-app>
 </template>

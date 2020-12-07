@@ -1,15 +1,20 @@
 <template>
   <header>
-    <v-app-bar app dark color="green">
+    <v-app-bar app dark color="#8bc34a">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title>Haiiku</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/')">Haiiku</v-toolbar-title>
 
       <!-- pc表示タブメニュー -->
       <v-tabs>
-        <v-tab v-for="(menuItem, index) in menuItems" :key="index">
+        <v-tab
+          v-for="menuItem in menuItems"
+          :key="menuItem.id"
+          :to="menuItem.url"
+        >
           {{ menuItem.name }}
         </v-tab>
       </v-tabs>
+      <button>roguin</button>
     </v-app-bar>
 
     <!-- sp表示タブメニュー -->
@@ -18,8 +23,9 @@
         <v-list-item-group>
           <v-list-item
             class="my-10"
-            v-for="(menuItem, index) in menuItems"
-            :key="index"
+            v-for="menuItem in menuItems"
+            :key="menuItem.id"
+            :to="menuItem.url"
           >
             <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
           </v-list-item>
@@ -45,10 +51,12 @@ export default {
 
 <style lang="scss" scoped>
 .v-toolbar__title {
+  cursor: pointer;
   overflow: visible;
   margin-right: 50px;
   font-size: 2.5rem;
 }
+
 .v-app-bar__nav-icon {
   @include display_pc {
     display: none;

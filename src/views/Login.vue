@@ -1,24 +1,63 @@
 <template>
-  <div class="container">
-    <h2>ログイン</h2>
-    <form class="login-form">
-      <div class="input-group">
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email">
-      </div>
-      <div class="input-group">
-        <label for="password">パスワード</label>
-        <input type="password" id="password">
-      </div>
-      <div class="input-group">
-        <button type="button">送信</button>
-      </div>
-    </form>
-  </div>
+  <v-card width="500px" class="mx-auto mt-5">
+    <v-card-title>
+      <h1 class="display-1 mx-auto">ログイン</h1>
+    </v-card-title>
+    <v-card-text>
+      <v-form>
+        <v-text-field
+          type="email"
+          v-model="email"
+          prepend-icon="mdi-account"
+          size="large"
+          label="メールアドレス"
+        ></v-text-field>
+        <v-text-field
+          v-model="password"
+          v-bind:type="showPassword ? 'text' : 'password'"
+          @click:append="showPassword = !showPassword"
+          prepend-icon="mdi-lock"
+          v-bind:append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          label="パスワード"
+        ></v-text-field>
+        <v-btn
+          class="mt-5"
+          @click="register()"
+          color="green" 
+          dark large retain-focus-on-click block
+          align="center"
+        >ログイン</v-btn>
+      </v-form>
+    </v-card-text>
+  </v-card>
 </template>
 
-<style>
-  .input-group {
-    margin: 5px;
-  }
-</style>Ï
+<script>
+import firebase from "firebase";
+
+export default {
+  name: "login",
+  data: function () {
+    return {
+      email: "",
+      password: "",
+      showPassword: false,
+    };
+  },
+
+  methods: {
+    register: function () {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then((user) => {
+          alert(`${user.email} ログイン`),
+          this.$router.push("/")
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    },
+  },
+};
+</script>

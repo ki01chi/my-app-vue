@@ -20,15 +20,11 @@
           v-bind:append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
           label="パスワード"
         ></v-text-field>
-        <v-text-field
-          type="text"
-          prepend-icon="mdi-emoticon-happy-outline"
-          label="ニックネーム"
-        ></v-text-field>
         <v-btn 
+          class="mt-5"
           @click="register()"
           color="green" 
-          dark large retain-focus-on-click
+          dark large retain-focus-on-click block
         >登録</v-btn>
       </v-form>
     </v-card-text>
