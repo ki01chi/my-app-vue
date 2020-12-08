@@ -6,7 +6,7 @@ export default {
     },
     {
       name: 'マイページ',
-      url: '/register'
+      url: '/login'
     },
   ]
 }

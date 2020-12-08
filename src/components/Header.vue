@@ -2,7 +2,7 @@
   <header>
     <v-app-bar app dark color="#8bc34a">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title @click="$router.push('/')">Haiiku</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/').catch(err => {})">Haiiku</v-toolbar-title>
 
       <!-- pc表示タブメニュー -->
       <v-tabs>
@@ -14,7 +14,10 @@
           {{ menuItem.name }}
         </v-tab>
       </v-tabs>
-      <button>roguin</button>
+      <v-btn @click="logout()" class="ml-auto" dark outlined>
+        <v-icon dark left>mdi-logout</v-icon>
+        退室する
+      </v-btn>
     </v-app-bar>
 
     <!-- sp表示タブメニュー -->
@@ -36,41 +39,54 @@
 </template>
 
 <script>
+import firebase from "firebase";
 import constants from "../common/constants";
 
 export default {
   name: "Header",
-  data() {
+  data: () => {
     return {
       drawer: false,
       menuItems: constants.menuItems,
     };
   },
+  methods: {
+    logout: function () {
+      firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        alert('退室しました');
+        this.$router.push('/');
+      })
+    }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.v-toolbar__title {
-  cursor: pointer;
-  overflow: visible;
-  margin-right: 50px;
-  font-size: 2.5rem;
-}
+  .v-toolbar__title {
+    cursor: pointer;
+    overflow: visible;
+    margin-right: 50px;
+    font-size: 2.5rem;
+  }
 
-.v-app-bar__nav-icon {
-  @include display_pc {
+  .v-app-bar__nav-icon {
+    @include display_pc {
+      display: none;
+    }
+  }
+  
+  .v-tabs {
     display: none;
-  }
-}
-.v-tabs {
-  display: none;
 
-  @include display_pc {
-    display: block;
+    @include display_pc {
+      display: block;
+    }
+    .v-tab {
+      font-size: 1.2rem;
+    }
   }
-  .v-tab {
-    font-size: 1.2rem;
-  }
-}
 </style>
 
