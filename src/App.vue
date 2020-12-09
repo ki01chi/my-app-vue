@@ -1,6 +1,9 @@
 <template>
   <v-app id="app">
     <Header />
+    <v-main>
+      <router-view/>
+    </v-main>
     <Footer />
   </v-app>
 </template>
@@ -25,4 +28,7 @@ export default {
       font-family: 'Sawarabi Mincho', sans-serif;
     }
 
+.link {
+  margin-top: 80px;
+}
 </style>

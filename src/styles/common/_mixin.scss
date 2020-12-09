@@ -8,6 +8,8 @@ $sp-max: calc($xs - 1)px;
 $tb-min: $xs + px;
 $tb-max: calc($sm - 1)px;
 $pc-min: $sm + px;
+
+$color-green: #8bc34a;
  
 /* PC */
 @mixin display_pc {
