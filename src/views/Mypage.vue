@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>マイページ</h2>
+    <h2>coming soon</h2>
   </div>
 </template>
 

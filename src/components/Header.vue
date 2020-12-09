@@ -50,6 +50,7 @@ export default {
       menuItems: constants.menuItems,
     };
   },
+
   methods: {
     logout: function () {
       firebase
@@ -57,7 +58,7 @@ export default {
       .signOut()
       .then(() => {
         alert('退室しました');
-        this.$router.push('/');
+        this.$router.push('/').catch(() => {});
       })
     }
   },
@@ -77,7 +78,7 @@ export default {
       display: none;
     }
   }
-  
+
   .v-tabs {
     display: none;
 
