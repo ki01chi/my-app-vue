@@ -58,7 +58,7 @@ export default {
       .signOut()
       .then(() => {
         alert('退室しました');
-        this.$router.push('/').catch(() => {});
+        this.$router.push('/mypage').catch(() => {});
       })
     }
   },
