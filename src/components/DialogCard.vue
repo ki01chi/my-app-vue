@@ -8,28 +8,30 @@
             <v-text-field
               label="名前を入力してください"
               v-model="returnData.name"
-              required
             ></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-text-field
               label="上の句"
               v-model="returnData.text1"
-              required
+              :rules="rules"
+              counter="10"
             ></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-text-field
               label="中の句"
               v-model="returnData.text2"
-              required
+              :rules="rules"
+              counter="10"
             ></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-text-field
               label="下の句"
               v-model="returnData.text3"
-              required
+              :rules="rules"
+              counter="10"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -44,9 +46,22 @@
 
 <script>
 export default {
-  props: ["name", "text1", "text2", "text3"],
+  props: {
+    name: {
+      type: String,
+    },
+    text1: {
+      type: String,
+    },
+    text2: {
+      type: String,
+    },
+    text3: {
+      type: String,
+    },
+  },
 
-  data() {
+  data: function () {
     return {
       returnData: {
         name: this.name,
@@ -54,13 +69,14 @@ export default {
         text2: this.text2,
         text3: this.text3,
       },
+      rules: [(v) => (!!v && 10 >= v.length) || `10文字以内で入力してください`],
     };
   },
   methods: {
     submit() {
       this.$emit("click-submit", this.returnData);
       this.$refs.form.reset();
-    }
+    },
   },
 };
 </script>

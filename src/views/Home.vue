@@ -1,20 +1,12 @@
 <template>
   <div>
     <div class="buttonWrap">
-      <v-btn 
-        @click="dialog = true" 
-        class="mt-10" 
-        x-large
-      >
+      <v-btn @click="dialog = true" class="mt-10" x-large>
         <v-icon left dark>mdi-lead-pencil</v-icon>
         俳句を詠む
       </v-btn>
     </div>
-    <v-dialog 
-      v-model="dialog"
-      persistent
-      max-width="600px"
-    >
+    <v-dialog v-model="dialog" max-width="600px">
       <dialog-card
         @click-submit="onSubmit"
         :name="name"
@@ -37,7 +29,7 @@ export default {
   components: {
     DialogCard,
   },
-  data() {
+  data: function () {
     return {
       dialog: false,
       name: "",
@@ -55,12 +47,11 @@ export default {
       this.text3 = obj.text3;
     },
   },
-
 };
 </script>
 
 <style>
-  .buttonWrap {
-    text-align: center;
-  }
+.buttonWrap {
+  text-align: center;
+}
 </style>
