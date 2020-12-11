@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="wrapButton">
+    <div class="buttonWrap">
       <v-btn 
         @click="dialog = true" 
         class="mt-10" 
@@ -16,9 +16,11 @@
       max-width="600px"
     >
       <dialog-card
-        @clickSubmit="onSubmit"
+        @click-submit="onSubmit"
         :name="name"
-        :text="text"
+        :text1="text1"
+        :text2="text2"
+        :text3="text3"
       ></dialog-card>
     </v-dialog>
     <v-text-field v-model="name" label="なまえ" disabled></v-text-field>
@@ -37,27 +39,28 @@ export default {
   },
   data() {
     return {
+      dialog: false,
       name: "",
       text1: "",
       text2: "",
       text3: "",
-      dialog: false,
     };
   },
   methods: {
-    onSubmit(params) {
+    onSubmit(obj) {
       this.dialog = false;
-      this.name = params.name;
-      this.text1 = params.text1;
-      this.text2 = params.text2;
-      this.text3 = params.text3;
+      this.name = obj.name;
+      this.text1 = obj.text1;
+      this.text2 = obj.text2;
+      this.text3 = obj.text3;
     },
   },
+
 };
 </script>
 
 <style>
-  .wrapButton {
+  .buttonWrap {
     text-align: center;
   }
 </style>
