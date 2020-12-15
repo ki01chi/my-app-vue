@@ -26,7 +26,7 @@
                     label="上の句"
                     v-model="text1"
                     :rules="rules"
-                    counter="10"
+                    counter="8"
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12">
@@ -34,7 +34,7 @@
                     label="中の句"
                     v-model="text2"
                     :rules="rules"
-                    counter="10"
+                    counter="8"
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12">
@@ -42,7 +42,7 @@
                     label="下の句"
                     v-model="text3"
                     :rules="rules"
-                    counter="10"
+                    counter="8"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import HaikuModel from "../models/Haiku";
+
 export default {
   props: {
     onPost: {
@@ -82,28 +84,31 @@ export default {
       text1: "",
       text2: "",
       text3: "",
-      rules: [(v) => (!!v && 10 >= v.length) || `10文字以内で入力してください`],
+      rules: [(v) => (!!v && 8 >= v.length) || `8文字以内で入力してください`],
     };
   },
   methods: {
-    submit() {
-      const newHaiku = this.createHaiku();
-      this.onPost(newHaiku);
-      this.name = "";
-      this.text1 = "";
-      this.text2 = "";
-      this.text3 = "";
-      this.$refs.form.reset();
+    async submit() {
+      try {
+        const haiku = await HaikuModel.save({
+          name: this.name,
+          date: this.date,
+          text1: this.text1,
+          text2: this.text2,
+          text3: this.text3,
+        });
+        this.onPost(haiku);
+        this.$refs.form.reset();
+      } catch (error) {
+        alert(error.message);
+      }
+      }
     },
-    createHaiku() {
-      return {
-        date: new Date().toLocaleString(),
-        name: this.name,
-        text1: this.text1,
-        text2: this.text2,
-        text3: this.text3,
-      };
-    },
-  },
 };
 </script>
+
+<style lang="scss" scoped>
+.headline {
+  text-align: center;
+}
+</style>

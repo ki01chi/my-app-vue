@@ -1,15 +1,17 @@
 <template>
-  <div class="Haiku-list">
-    <template v-for="(Haiku, index) in Haikus">
-      <HaikuView
-        :key="index"
-        :name="Haiku.name"
-        :date="Haiku.date"
-        :text1="Haiku.text1"
-        :text2="Haiku.text2"
-        :text3="Haiku.text3"
-      />
-    </template>
+  <div class="container">
+    <div class="row">
+      <template v-for="(haiku) in haikus">
+        <HaikuView
+          :key="haiku.id"
+          :name="haiku.name"
+          :date="haiku.date"
+          :text1="haiku.text1"
+          :text2="haiku.text2"
+          :text3="haiku.text3"
+        />
+      </template>
+    </div>
   </div>
 </template>
 
@@ -20,10 +22,10 @@ export default {
     HaikuView,
   },
   props: {
-    Haikus: {
+    haikus: {
       type: Array,
       required: true,
     },
   },
-};
+}
 </script>

@@ -19,6 +19,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
+export const db = firebase.firestore();
+export const dbHaikus = db.collection('haikus');
 
 new Vue({
   router,

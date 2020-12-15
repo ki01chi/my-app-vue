@@ -9,7 +9,7 @@ $tb-min: $xs + px;
 $tb-max: calc($sm - 1)px;
 $pc-min: $sm + px;
 
-$color-green: #8bc34a;
+$color-default: #383838;
  
 /* PC */
 @mixin display_pc {
