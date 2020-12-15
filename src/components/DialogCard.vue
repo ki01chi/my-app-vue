@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center">
+  <v-row justify="center" class="mx-auto">
     <v-dialog hide-overlay v-model="dialog" max-width="600px">
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="mt-10" color="success" x-large :bind="attrs" v-on="on">
