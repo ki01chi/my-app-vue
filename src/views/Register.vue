@@ -73,8 +73,8 @@ export default {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then((user) => {
-          alert(`${user.email} 新規登録完了しました`), this.$router.push("/");
+        .then( () => {
+          alert("新規登録完了しました"), this.$router.push("/");
         })
         .catch((error) => {
           alert(error.message);
