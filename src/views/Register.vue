@@ -34,23 +34,23 @@
         </v-form>
       </v-card-text>
     </v-card>
-        <v-alert
+    <v-alert
       class="v-alert mx-auto mt-10"
-      width="500px"
       border="top"
+      max-width="500px"
       colored-border
       color="success"
       elevation="2"
     >
       <v-icon>mdi-login</v-icon>
       ご登録がお済みの方はこちら
-      <v-btn
-        dark
-        color="success"
-        class="ms-5"
+      <v-btn 
         @click="$router.push('/login')"
-      >利用開始</v-btn
-      >
+        class="ms-5" 
+        color="success" 
+        dark 
+        >利用開始
+      </v-btn>
     </v-alert>
   </div>
 </template>
@@ -84,8 +84,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-card-title {
+  color: $color-default;
   letter-spacing: 1rem;
 }
 

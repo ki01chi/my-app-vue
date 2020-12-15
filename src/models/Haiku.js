@@ -18,8 +18,8 @@ class Haiku {
     this.text3 = text3;
   }
 
-  static async save({ name, text1, text2, text3}) {
-    if(!text1 || !text2) {
+  static async save({ name, text1, text2, text3 }) {
+    if (!name || !text1 || !text2) {
       throw new Error('入力が必要です')
     }
     if (text1.length > 8) {
@@ -28,7 +28,7 @@ class Haiku {
     if (text2.length > 8) {
       throw new Error('入力は8文字までです');
     }
-    if (!text3 === null  || text3.length > 8) {
+    if (!text3 === null || text3.length > 8) {
       throw new Error('入力は8文字までです');
     }
 

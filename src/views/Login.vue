@@ -2,7 +2,7 @@
   <div class="container">
     <v-alert
       class="v-alert mx-auto mt-10"
-      width="500px"
+      max-width="500px"
       border="top"
       colored-border
       color="warning"
@@ -85,16 +85,17 @@ export default {
 </script>
 
 <style lang="scss">
-  .v-card-title {
-    letter-spacing: 1rem;
-  }
+.v-card-title {
+  color: $color-default;
+  letter-spacing: 1rem;
+}
 
-  .login-btn span {
-    font-size: 20px;
-    letter-spacing: 1rem;
-  }
+.login-btn span {
+  font-size: 1.2rem;
+  letter-spacing: 1rem;
+}
 
-  .v-alert__content {
-    text-align: center;
-  }
+.v-alert__content {
+  text-align: center;
+}
 </style>

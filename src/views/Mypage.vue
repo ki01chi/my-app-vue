@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h2 class="userTitle mt-10">ようこそ、{{ currentUser }} さん</h2>
+    <v-icon x-large class="my-8">mdi-account-heart</v-icon>
+    <h2 class="userTitle">ようこそ、{{ currentUser }} さん</h2>
   </div>
 </template>
 
@@ -16,8 +17,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.userTitle {
+<style lang="scss" scoped>
+.container {
   text-align: center;
 }
 </style>

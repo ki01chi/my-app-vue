@@ -2,31 +2,30 @@
   <v-app id="app">
     <Header />
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
     <Footer />
   </v-app>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
-
-    #app {
-      font-family: 'Sawarabi Mincho', sans-serif;
-    }
+<style lang="scss">
+#app {
+  font-family: 游明朝体, sans-serif;
+  color: $color-default;
+}
 
 .link {
   margin-top: 80px;
