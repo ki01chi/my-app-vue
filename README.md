@@ -20,13 +20,16 @@
 
 ## 使用画面のイメージ
 #### メインページ
-
+![haikuPF](https://user-images.githubusercontent.com/70625280/102736591-a521c880-4388-11eb-8609-b420851b2273.png)
 
 #### 新規登録画面
 ![スクリーンショット 2020-12-21 12 16 21](https://user-images.githubusercontent.com/70625280/102735929-fdf06180-4386-11eb-8853-77be93a89df2.png)
 
 #### ログイン画面
 ![スクリーンショット 2020-12-21 12 16 07](https://user-images.githubusercontent.com/70625280/102735923-f761ea00-4386-11eb-85d1-f9d9ef862e44.png)
+
+#### GIF
+
 
 ## 使用技術
 
