@@ -30,3 +30,11 @@
 
 #### GIF
 ![Haiiku](https://user-images.githubusercontent.com/70625280/102737853-d8b22200-438b-11eb-8af8-109600c006c2.gif)
+
+## 使用技術
+
+* __フロントエンド__
+  * __Vue.js ( VueRouter / Vuetify )__
+
+* __バックエンド__
+  * __Firebase ( Hosting / Authentication / CloudFirestore )__
