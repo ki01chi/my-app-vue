@@ -29,16 +29,4 @@
 ![スクリーンショット 2020-12-21 12 16 07](https://user-images.githubusercontent.com/70625280/102735923-f761ea00-4386-11eb-85d1-f9d9ef862e44.png)
 
 #### GIF
-
-
-## 使用技術
-
-* __フロントエンド__
-  * __Vue.js ( Vue Router / Vuetify )__
-
-* __バックエンド__
-  * __Firebase ( Hosting / Authentication / CloudFirestore )__
-
-* その他使用ツール
-  * Visual Studio Code
-  * Adobe XD
+![Haiiku](https://user-images.githubusercontent.com/70625280/102737853-d8b22200-438b-11eb-8af8-109600c006c2.gif)
