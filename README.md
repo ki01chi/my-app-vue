@@ -1,25 +1,33 @@
-# my-appvue
+# Haiiku
+**誰もが気軽に投稿できる俳句アプリです。**
+<br><br>
+**URL：** https://my-app-vue-1b432.web.app/
 
-## Project setup
-```
-npm install
-```
+## アプリ概要  
+  
+誰でも簡単に俳句をつくって投稿できるアプリです。  
+そのため、投稿などはログインしなくてもできるようにしています。
+スマートフォンからでも投稿できるようにレスポンシブにも対応しております。  
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+投稿された俳句をみて 「はぁ、、良い句♪」 と思わず感嘆をもらすという意味を込めて、  
+**「Haiiku」** という名前でサービスを開発しました。  
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 開発した背景  
 
-### Lints and fixes files
-```
-npm run lint
-```
+昨今は気軽に人に会うことも難しくなってしまったので、距離があってもチャットのような感覚で趣味を共有できれば良いなと思ったのがきっかけです。  
+また、某バラエティ番組の俳句コーナーを見て 「俳句つくっても見せる場所がない」 という母の一言を聞いて
+もっと身近に共有できる場所があればと考え、開発しました。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# my-app-vue
+## 使用技術
+
+* __フロントエンド__
+  * __Vue.js ( Vue Router / Vuetify )__
+
+* __バックエンド__
+  * __Firebase ( Hosting / Authentication / CloudFirestore )__
+
+* その他使用ツール
+  * Visual Studio Code
+  * Adobe XD
+
+## 使用画面のイメージ
