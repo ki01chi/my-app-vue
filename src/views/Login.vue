@@ -73,8 +73,8 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then((user) => {
-          alert(`${user.email} 入室しました`), this.$router.push("/");
+        .then(() => {
+          alert(`入室しました`), this.$router.push("/");
         })
         .catch((error) => {
           alert(error.message);

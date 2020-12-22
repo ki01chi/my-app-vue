@@ -44,8 +44,6 @@ export default {
       try {
         haikus = await HaikuModel.fetchHaikus();
       } catch (error) {
-        // 読み込み失敗など、何かしらのエラーが発生したら
-        // ユーザーにデータの取得が失敗したことを知らせる
         alert(error.message);
       }
       return haikus;

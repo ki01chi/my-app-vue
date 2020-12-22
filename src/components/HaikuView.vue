@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" sm="6" md="3">
-    <v-card height="550px" tile class="mt-5">
+    <v-card height="550px" tile class="mb-10">
       <v-row class="just">
         <v-col class="v-card__text">
           <p>{{ text1 }}</p>
@@ -63,6 +63,7 @@ export default {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
+    text-orientation: upright;
     letter-spacing: 0.6em;
     line-height: 2;
   }
