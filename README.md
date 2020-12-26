@@ -1,7 +1,7 @@
 # Haiiku
+### **誰もが気軽に投稿できる俳句アプリ**
 ![haikuPF](https://user-images.githubusercontent.com/70625280/102736591-a521c880-4388-11eb-8609-b420851b2273.png)
 <br><br>
-**誰もが気軽に投稿できる俳句アプリです。**
 **URL：** https://my-app-vue-1b432.web.app/
 
 ## アプリ概要  
