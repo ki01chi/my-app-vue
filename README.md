@@ -1,5 +1,6 @@
 # Haiiku
 **誰もが気軽に投稿できる俳句アプリです。**
+![haikuPF](https://user-images.githubusercontent.com/70625280/102736591-a521c880-4388-11eb-8609-b420851b2273.png)
 <br><br>
 **URL：** https://my-app-vue-1b432.web.app/
 
@@ -19,14 +20,15 @@
 昨今は気軽に人に会うことも難しくなってしまったので、距離があってもチャットのような感覚で趣味を共有というコンセプトで作りました。  
 
 ## 使用画面のイメージ
-#### メインページ
-![haikuPF](https://user-images.githubusercontent.com/70625280/102736591-a521c880-4388-11eb-8609-b420851b2273.png)
-
 #### 新規登録画面
 ![スクリーンショット 2020-12-21 12 16 21](https://user-images.githubusercontent.com/70625280/102735929-fdf06180-4386-11eb-8853-77be93a89df2.png)
 
 #### ログイン画面
 ![スクリーンショット 2020-12-21 12 16 07](https://user-images.githubusercontent.com/70625280/102735923-f761ea00-4386-11eb-85d1-f9d9ef862e44.png)
+
+#### 新規投稿画面
+バリデーション（８文字以内）をつけてます
+![haikuPF](https://user-images.githubusercontent.com/70625280/102736591-a521c880-4388-11eb-8609-b420851b2273.png)
 
 #### GIF
 ![Haiiku](https://user-images.githubusercontent.com/70625280/102737853-d8b22200-438b-11eb-8af8-109600c006c2.gif)
